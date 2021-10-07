@@ -62,8 +62,7 @@ namespace ConsoleApp2
             allApps = Directory.GetFiles(path).Select(Path.GetFileName).ToList();
             allApps.ToList().ForEach(y => { File.Move($"{path + y}", $"{path}Other\\{y}"); });
 
-
-            DeleteEmptyDir();
+            DeleteEmptyDirectory();
         }
         static void CreateDirectory()
         {
@@ -72,7 +71,7 @@ namespace ConsoleApp2
                     Directory.CreateDirectory($"{path + folders.ElementAt(i).Key}");
             Directory.CreateDirectory($"{path}Other");
         }
-        static void DeleteEmptyDir()
+        static void DeleteEmptyDirectory()
         {
             List<string> dirs = Directory.GetDirectories(path).ToList();
             foreach (var item in dirs)
