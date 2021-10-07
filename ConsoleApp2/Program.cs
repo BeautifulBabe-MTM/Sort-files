@@ -62,6 +62,7 @@ namespace ConsoleApp2
             allApps = Directory.GetFiles(path).Select(Path.GetFileName).ToList();
             allApps.ToList().ForEach(y => { File.Move($"{path + y}", $"{path}Other\\{y}"); });
 
+
             DeleteEmptyDir();
         }
         static void CreateDirectory()
